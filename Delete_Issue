@@ -1,0 +1,13 @@
+import sqlite3
+
+def delete_Issue(data):
+    with sqlite3.connect("Block Manager.db") as db:
+        cursor = db.cursor()
+        sql = "delete from Issue where Issue_ID=?"
+        cursor.execute(sql,data)
+        db.commit()
+
+if __name__== "__main__":
+    data=("0",)
+    delete_Issue(data)
+    
